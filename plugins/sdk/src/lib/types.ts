@@ -1,12 +1,6 @@
 export type UiAction = [string] | [string, unknown[]];
 
-export type AppSidebarEntry = {
-  text: string;
-  icon?: string;
-  action: UiAction;
-};
-
-export type AppToolbarEntry = {
+export type MainActionEntry = {
   text: string;
   icon?: string;
   action: UiAction;

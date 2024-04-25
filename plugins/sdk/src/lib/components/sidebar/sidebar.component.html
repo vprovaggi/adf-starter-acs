@@ -2,7 +2,7 @@
   <mat-sidenav #sidenav mode="side" opened="false" class="page-sidenav">
     <mat-nav-list>
       <ng-container *ngIf="entries">
-        <button *ngFor="let entry of entries" mat-list-item (click)="runAction(entry)">
+        <button *ngFor="let entry of entries" mat-list-item [routerLink]="entry.route">
           <mat-icon matListIcon>{{ entry.icon }}</mat-icon>
           <div>{{ entry.text | translate }}</div>
         </button>

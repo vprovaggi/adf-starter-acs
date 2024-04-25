@@ -13,7 +13,7 @@ import { registerLocaleData } from '@angular/common';
 import localeEs from '@angular/common/locales/es';
 registerLocaleData(localeEs);
 
-import { provideSidebarEntries, provideHeaderEntries, provideAppConfig, provideActions, provideWidgets } from '@app/sdk';
+import { provideAppConfig, provideActions, provideWidgets, provideNavigation } from '@app/sdk';
 import { appSidebar } from './app.sidebar';
 import { appToolbar } from './app.toolbar';
 import { appConfig } from './app.config';
@@ -35,8 +35,7 @@ import { appWidgets } from './app.widgets';
   declarations: [AppComponent],
   providers: [
     provideTranslations('app', 'assets'),
-    provideHeaderEntries(appToolbar),
-    provideSidebarEntries(appSidebar),
+    provideNavigation(appSidebar,appToolbar),
     provideAppConfig(appConfig),
     provideActions(appActions),
     provideWidgets(appWidgets)

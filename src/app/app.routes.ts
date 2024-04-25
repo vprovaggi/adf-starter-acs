@@ -33,7 +33,7 @@ export const appRoutes: Routes = [
       {
         path: 'documents',
         canActivate: [AuthGuardEcm],
-        loadChildren: () => import('documents-plugin').then((m) => m.documentsPluginRoutes)
+        loadChildren: () => import('documents-plugin').then((m) => m.pluginRoutes)
       },
       {
         path: 'page1',
@@ -45,17 +45,17 @@ export const appRoutes: Routes = [
       },
       {
         path: 'calendar',
-        loadChildren: () => import('calendar-plugin').then((m) => m.calendarPluginRoutes)
+        loadChildren: () => import('calendar-plugin').then((m) => m.pluginRoutes)
       },
       {
         path: 'trashcan',
         canActivate: [AuthGuardEcm],
-        loadChildren: () => import('trashcan-plugin').then((m) => m.trashcanPluginRoutes)
+        loadChildren: () => import('trashcan-plugin').then((m) => m.pluginRoutes)
       },
       {
         path: 'search',
         canActivate: [AuthGuardEcm],
-        loadChildren: () => import('search-plugin').then((m) => m.searchPluginRoutes)
+        loadChildren: () => import('search-plugin').then((m) => m.pluginRoutes)
       }
     ]
   },

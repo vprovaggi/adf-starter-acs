@@ -1,35 +1,39 @@
-import { AppSidebarEntry } from '@app/sdk';
+import { MainNavigationEntry } from '@app/sdk';
 
 /** Default global application sidebar entries */
-export const appSidebar: Array<AppSidebarEntry> = [
+export const appSidebar: Array<MainNavigationEntry> = [
   // Documents Plugin
   {
     text: 'APP.NAV.DOCUMENTS',
     icon: 'text_snippet',
-    action: ['router.navigate', ['/documents']]
+    route: '/documents',
+    
   },
   // Calendar Plugin
   {
     text: 'Calendar',
     icon: 'calendar_month',
-    action: ['router.navigate', ['/calendar']]
+    route: '/calendar',
+    
   },
   // Custom application Page 1
   {
     text: 'Page 1',
     icon: 'task',
-    action: ['router.navigate', ['/page1']]
+    route: '/page1',
+    
   },
   // Custom application Page 2
   {
     text: 'Page 2',
     icon: 'assignment',
-    action: ['router.navigate', ['/page2']]
+    route: '/page2',
+    
   },
   // Trashcan Plugin
   {
     text: 'Trashcan',
     icon: 'delete',
-    action: ['router.navigate', ['/trashcan']]
+    route: '/trashcan',
   }
 ];
