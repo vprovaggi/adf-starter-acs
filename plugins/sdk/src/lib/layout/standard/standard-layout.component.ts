@@ -2,7 +2,7 @@ import { Component, inject, Input, OnInit, ViewChild, ViewEncapsulation } from '
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { AppSidebarComponent, AppToolbarComponent } from '../../components';
-import { NavigationService } from '../../navigation';
+import { NavigationState } from '../../navigation';
 
 export type StandardLayoutSettings = {
   showToolbar?: boolean;
@@ -18,7 +18,7 @@ export type StandardLayoutSettings = {
   encapsulation: ViewEncapsulation.None
 })
 export class StandardLayoutComponent implements OnInit {
-  private navigationService = inject(NavigationService);
+  private navigationService = inject(NavigationState);
   private activatedRoute = inject(ActivatedRoute);
 
   @Input()
@@ -30,8 +30,8 @@ export class StandardLayoutComponent implements OnInit {
   @ViewChild('sidebar')
   sidebar?: AppSidebarComponent;
 
-  sidebarEntries$ = this.navigationService.sidebarEntries$;
-  headerEntries$ = this.navigationService.headerEntries$;
+  sidebarEntries$ = this.navigationService.mainNavItems$;
+  headerEntries$ = this.navigationService.mainActions$;
   ngOnInit() {
     this.activatedRoute.data.subscribe((data) => {
       const settings = data['layout'] as StandardLayoutSettings;

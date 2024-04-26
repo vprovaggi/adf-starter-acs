@@ -1,2 +1,2 @@
 export * from './navigation.service';
-export * from './interface';
+export * from './types';

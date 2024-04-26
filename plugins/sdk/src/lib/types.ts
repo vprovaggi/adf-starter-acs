@@ -1,7 +1,4 @@
-export type UiAction = [string] | [string, unknown[]];
-
-export type MainActionEntry = {
-  text: string;
-  icon?: string;
-  action: UiAction;
-};
+export type VisualToken = {
+    icon?: string,
+    text : string
+}

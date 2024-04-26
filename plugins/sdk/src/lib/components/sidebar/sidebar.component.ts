@@ -5,8 +5,6 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { TranslateModule } from '@ngx-translate/core';
 import { MainNavigationEntry } from '../../navigation';
-import { MainActionEntry } from '../../types';
-import { ActionService } from '../../services';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -18,7 +16,6 @@ import { RouterModule } from '@angular/router';
   encapsulation: ViewEncapsulation.None
 })
 export class AppSidebarComponent {
-  private commandService = inject(ActionService);
 
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
@@ -27,15 +24,5 @@ export class AppSidebarComponent {
 
   toggle() {
     this.sidenav.toggle();
-  }
-
-  runAction(entry: MainActionEntry) {
-    if (entry.action) {
-      const [command, params] = entry.action;
-
-      if (command) {
-        this.commandService.execute(command, params);
-      }
-    }
   }
 }

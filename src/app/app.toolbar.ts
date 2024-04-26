@@ -18,5 +18,10 @@ export const appToolbar: Array<MainActionEntry> = [
     icon: 'search',
     text: 'Search',
     action: ['router.navigate', ['/search']]
+  },
+  {
+    icon: '',
+    text: 'Add',
+    action: ['add.action'],
   }
 ];

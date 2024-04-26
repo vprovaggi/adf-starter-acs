@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { MainActionEntry } from '../../types';
+import { MainActionEntry } from '../../actions';
 import { AppTitleComponent } from '../title';
 import { ActionService } from '../../services/commands/action.service';
 
