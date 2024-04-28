@@ -4,7 +4,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { TranslateModule } from '@ngx-translate/core';
-import { MainNavigationEntry } from '../../navigation';
+import { MainNavigationEntry } from '../../core';
 import { RouterModule } from '@angular/router';
 
 @Component({
