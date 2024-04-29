@@ -1,7 +1,7 @@
-import { AppToolbarEntry } from '@app/sdk';
+import { MainActionEntry } from '@app/sdk';
 
 /** Default global application header entries */
-export const appToolbar: Array<AppToolbarEntry> = [
+export const appToolbar: Array<MainActionEntry> = [
   {
     text: 'APP.NAV.DOCUMENTS',
     action: ['router.navigate', ['/documents']]
@@ -18,5 +18,10 @@ export const appToolbar: Array<AppToolbarEntry> = [
     icon: 'search',
     text: 'Search',
     action: ['router.navigate', ['/search']]
+  },
+  {
+    icon: '',
+    text: 'Add',
+    action: ['add.action'],
   }
 ];

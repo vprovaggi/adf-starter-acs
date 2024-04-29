@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { AppToolbarEntry } from '../../types';
+import { MainActionEntry } from '../../core';
 import { AppTitleComponent } from '../title';
 import { ActionService } from '../../services/commands/action.service';
 
@@ -32,7 +32,7 @@ export class AppToolbarComponent {
   private commandService = inject(ActionService);
 
   @Input()
-  entries!: Array<AppToolbarEntry> | null;
+  entries!: Array<MainActionEntry> | null;
 
   @Input()
   showSidebar = true;
@@ -40,7 +40,7 @@ export class AppToolbarComponent {
   @Output()
   toggleSidebar = new EventEmitter<void>();
 
-  runAction(entry: AppToolbarEntry) {
+  runAction(entry: MainActionEntry) {
     if (entry.action) {
       const [command, params] = entry.action;
 
